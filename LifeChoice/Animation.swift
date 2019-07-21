@@ -38,4 +38,22 @@ class Animation {
             }
         })
     }
+    
+    func animateArray(imageView: UIImageView, images: [UIImage]) {
+        imageView.animationImages = images
+        imageView.alpha = 1
+        imageView.animationDuration = 30
+        imageView.animationRepeatCount = 99
+        imageView.startAnimating()
+    }
+    
+    func createImageArray(total: Int, imagePrefix: String) -> [UIImage] {
+        var imageArray: [UIImage] = []
+        for imageCount in 0..<total {
+            let imageName = "\(imagePrefix)-\(imageCount).png"
+            let image = UIImage(named: imageName)!
+            imageArray.append(image)
+        }
+        return imageArray
+    }
 }

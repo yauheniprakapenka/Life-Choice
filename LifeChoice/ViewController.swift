@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     let motionEffect = MotionEffect()
     let animation = Animation()
     
+    var catSprites: [UIImage] = []
+    
     @IBOutlet weak var backgroundColorImageView: UIImageView!
     
     @IBOutlet weak var socialLifeColorImageView: UIImageView!
@@ -28,6 +30,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var socialLifeSwitch: UISwitch!
     @IBOutlet weak var workSwitch: UISwitch!
     @IBOutlet weak var sleepSwitch: UISwitch!
+    
+    @IBOutlet weak var catImageView: UIImageView!
     
     // Introduction
     @IBOutlet weak var label1: UILabel!
@@ -63,6 +67,8 @@ class ViewController: UIViewController {
         label3.alpha = 0
         label4.alpha = 0
 
+        catImageView.alpha = 0
+        
         motionEffect.applyMotionEffect(toView: backgroundColorImageView, magnitude: 40)
     }
     
@@ -84,6 +90,12 @@ class ViewController: UIViewController {
         animation.showLabelWithDelay(toView: label2, delay: 6, timeIntervale: 9, alpha: 1, text:  "Все успеть невозможно")
         animation.showLabelWithDelay(toView: label3, delay: 10, timeIntervale: 14, alpha: 1, text:  "Сосредоточься только на том, что тебе действительно важно")
         animation.showLabelWithDelay(toView: label4, delay: 15, timeIntervale: 19, alpha: 1, text:  "От остального просто откажись")
+        
+        catSprites = animation.createImageArray(total: 5, imagePrefix: "Cat")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+            self.animation.animateArray(imageView: self.catImageView, images: self.catSprites)
+        }
     }
     
     @IBAction func toggleWorkSwitch(_ sender: UISwitch) {
@@ -145,5 +157,8 @@ class ViewController: UIViewController {
         previousChoice = currentChoice
     }
     
+
+    
+
 }
 
