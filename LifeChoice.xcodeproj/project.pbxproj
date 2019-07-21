@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3E2A14A622E31D04000FDBAE /* MotionEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E2A14A522E31D04000FDBAE /* MotionEffect.swift */; };
+		3E435AAD22E386E10032693C /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E435AAC22E386E10032693C /* Animation.swift */; };
+		3E435ADE22E452AF0032693C /* Cat-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E435ADD22E452AF0032693C /* Cat-0.png */; };
+		3E435AE322E452FA0032693C /* Cat-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E435ADF22E452FA0032693C /* Cat-4.png */; };
+		3E435AE422E452FA0032693C /* Cat-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E435AE022E452FA0032693C /* Cat-3.png */; };
+		3E435AE522E452FA0032693C /* Cat-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E435AE122E452FA0032693C /* Cat-1.png */; };
+		3E435AE622E452FA0032693C /* Cat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E435AE222E452FA0032693C /* Cat-2.png */; };
 		3E530CF322E301EE00E3906B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E530CF222E301EE00E3906B /* AppDelegate.swift */; };
 		3E530CF522E301EE00E3906B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E530CF422E301EE00E3906B /* ViewController.swift */; };
 		3E530CF822E301EE00E3906B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E530CF622E301EE00E3906B /* Main.storyboard */; };
@@ -17,6 +23,12 @@
 
 /* Begin PBXFileReference section */
 		3E2A14A522E31D04000FDBAE /* MotionEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionEffect.swift; sourceTree = "<group>"; };
+		3E435AAC22E386E10032693C /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		3E435ADD22E452AF0032693C /* Cat-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Cat-0.png"; path = "../../../../!Original/Life Choice/Cat-0.png"; sourceTree = "<group>"; };
+		3E435ADF22E452FA0032693C /* Cat-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat-4.png"; sourceTree = "<group>"; };
+		3E435AE022E452FA0032693C /* Cat-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat-3.png"; sourceTree = "<group>"; };
+		3E435AE122E452FA0032693C /* Cat-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat-1.png"; sourceTree = "<group>"; };
+		3E435AE222E452FA0032693C /* Cat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cat-2.png"; sourceTree = "<group>"; };
 		3E530CEF22E301EE00E3906B /* LifeChoice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeChoice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E530CF222E301EE00E3906B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3E530CF422E301EE00E3906B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +49,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E435AAF22E43F180032693C /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				3E435AB022E43F3A0032693C /* Cat */,
+			);
+			path = Sprites;
+			sourceTree = "<group>";
+		};
+		3E435AB022E43F3A0032693C /* Cat */ = {
+			isa = PBXGroup;
+			children = (
+				3E435ADD22E452AF0032693C /* Cat-0.png */,
+				3E435AE122E452FA0032693C /* Cat-1.png */,
+				3E435AE222E452FA0032693C /* Cat-2.png */,
+				3E435AE022E452FA0032693C /* Cat-3.png */,
+				3E435ADF22E452FA0032693C /* Cat-4.png */,
+			);
+			path = Cat;
+			sourceTree = "<group>";
+		};
 		3E530CE622E301EE00E3906B = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +88,11 @@
 		3E530CF122E301EE00E3906B /* LifeChoice */ = {
 			isa = PBXGroup;
 			children = (
+				3E435AAF22E43F180032693C /* Sprites */,
 				3E530CF222E301EE00E3906B /* AppDelegate.swift */,
 				3E530CF422E301EE00E3906B /* ViewController.swift */,
 				3E2A14A522E31D04000FDBAE /* MotionEffect.swift */,
+				3E435AAC22E386E10032693C /* Animation.swift */,
 				3E530CF622E301EE00E3906B /* Main.storyboard */,
 				3E530CF922E301EF00E3906B /* Assets.xcassets */,
 				3E530CFB22E301EF00E3906B /* LaunchScreen.storyboard */,
@@ -126,8 +160,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E530CFD22E301EF00E3906B /* LaunchScreen.storyboard in Resources */,
+				3E435ADE22E452AF0032693C /* Cat-0.png in Resources */,
+				3E435AE422E452FA0032693C /* Cat-3.png in Resources */,
+				3E435AE622E452FA0032693C /* Cat-2.png in Resources */,
 				3E530CFA22E301EF00E3906B /* Assets.xcassets in Resources */,
 				3E530CF822E301EE00E3906B /* Main.storyboard in Resources */,
+				3E435AE322E452FA0032693C /* Cat-4.png in Resources */,
+				3E435AE522E452FA0032693C /* Cat-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +179,7 @@
 			files = (
 				3E530CF522E301EE00E3906B /* ViewController.swift in Sources */,
 				3E2A14A622E31D04000FDBAE /* MotionEffect.swift in Sources */,
+				3E435AAD22E386E10032693C /* Animation.swift in Sources */,
 				3E530CF322E301EE00E3906B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
