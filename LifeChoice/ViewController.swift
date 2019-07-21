@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     let animation = Animation()
     
     var catSprites: [UIImage] = []
+    var zzzSprites: [UIImage] = []
     
     @IBOutlet weak var backgroundColorImageView: UIImageView!
     
@@ -36,6 +37,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var sleepTextForSwitchLabel: UILabel!
     
     @IBOutlet weak var catImageView: UIImageView!
+    @IBOutlet weak var zzzImageView: UIImageView!
+    
+    @IBOutlet weak var trainImageView: UIImageView!
+    @IBOutlet weak var trainHorizontalConstraint: NSLayoutConstraint!
     
     // Introduction
     @IBOutlet weak var label1: UILabel!
@@ -74,8 +79,11 @@ class ViewController: UIViewController {
         sleepTextForSwitchLabel.alpha = 0
 
         catImageView.alpha = 0
+        zzzImageView.alpha = 0
         
-        motionEffect.applyMotionEffect(toView: backgroundColorImageView, magnitude: 40)
+        motionEffect.applyMotionEffect(toView: backgroundColorImageView, magnitude: 50)
+        
+        trainHorizontalConstraint.constant = -170
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -102,11 +110,11 @@ class ViewController: UIViewController {
         animation.showLabelWithDelay(toView: sleepTextForSwitchLabel, delay: 22, timeIntervale: nil, timerToDisable: false, text: "Сон")
 
         catSprites = animation.createImageArray(total: 5, imagePrefix: "Cat")
-        
-        animation.showImageViewWithDelay(toView: catImageView, delay: 22, alpha: 1)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 24) {
-            self.animation.animateArray(imageView: self.catImageView, images: self.catSprites)
-        }
+        zzzSprites = animation.createImageArray(total: 2, imagePrefix: "z-z-z")
+        animation.animateArray(imageView: zzzImageView, images: zzzSprites, duration: 1.8)
+        animation.animateArray(imageView: catImageView, images: catSprites, duration: 10)
+        zzzImageView.alpha = 0
+        catImageView.alpha = 0
     }
     
     @IBAction func toggleWorkSwitch(_ sender: UISwitch) {
@@ -118,13 +126,18 @@ class ViewController: UIViewController {
         if workSwitch.isOn && socialLifeSwitch.isOn && sleepSwitch.isOn {
             socialLifeSwitch.isOn = false
             socialLifeColorImageView.alpha = 0
+            trainImageView.alpha = 0
+            
         }
         workColorImageView.alpha = 1
         previousChoice = currentChoice
+        
         if workSwitch.isOn {
             workColorImageView.alpha = 1
+            catImageView.alpha = 1
         } else {
             workColorImageView.alpha = 0
+            catImageView.alpha = 0
         }
     }
     
@@ -134,36 +147,56 @@ class ViewController: UIViewController {
             if previousChoice == .work {
                 sleepSwitch.isOn = false
                 sleepColorImageView.alpha = 0
+                zzzImageView.alpha = 0
             } else {
                 workSwitch.isOn = false
                 workColorImageView.alpha = 0
+                catImageView.alpha = 0
             }
             socialLifeColorImageView.alpha = 1
         }
         previousChoice = currentChoice
+        
         if socialLifeSwitch.isOn {
             socialLifeColorImageView.alpha = 1
+            
+            trainImageView.alpha = 1
+            UIView.animate(withDuration: 50, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+                self.trainHorizontalConstraint.constant = 100
+                self.view.layoutIfNeeded()
+            })
         } else {
             socialLifeColorImageView.alpha = 0
+            
+            trainHorizontalConstraint.constant = -170
+            UIImageView.animate(withDuration: 1) { [weak self] in
+                self?.trainImageView.alpha = 0
+            }
         }
     }
     
     @IBAction func toggleSleepSwitch(_ sender: UISwitch) {
         currentChoice = .sleep
+        
         if workSwitch.isOn && socialLifeSwitch.isOn && sleepSwitch.isOn {
             if previousChoice == .socialLife {
                 workSwitch.isOn = false
                 socialLifeColorImageView.alpha = 1
                 workColorImageView.alpha = 0
+                catImageView.alpha = 0
             } else {
                 socialLifeSwitch.isOn = false
                 socialLifeColorImageView.alpha = 0
+                trainImageView.alpha = 0
             }
         }
+        
         if sleepSwitch.isOn {
             sleepColorImageView.alpha = 1
+            zzzImageView.alpha = 1
         } else {
             sleepColorImageView.alpha = 0
+            zzzImageView.alpha = 0
         }
         previousChoice = currentChoice
     }
