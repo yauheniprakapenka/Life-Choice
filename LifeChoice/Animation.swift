@@ -24,14 +24,15 @@ class Animation {
         }, completion: nil)
     }
     
-    func showLabelWithDelay(toView: UILabel, delay: Double, alpha: CGFloat, text: String) {
+    func showLabelWithDelay(toView: UILabel, delay: Double, timeIntervale: Double, alpha: CGFloat, text: String) {
         let uiLabel = toView
-        toView.text = text
+        uiLabel.text = text
+        
         UIView.animate(withDuration: 1, delay: delay, options: [], animations: {
             uiLabel.alpha = alpha
         }, completion: nil)
         
-        Timer.scheduledTimer(withTimeInterval: 5, repeats: false, block: { timer in
+        Timer.scheduledTimer(withTimeInterval: timeIntervale, repeats: false, block: { timer in
             UIImageView.animate(withDuration: 1) { [weak self] in
             toView.alpha = 0
             }
