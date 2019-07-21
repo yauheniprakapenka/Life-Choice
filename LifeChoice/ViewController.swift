@@ -31,13 +31,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var workSwitch: UISwitch!
     @IBOutlet weak var sleepSwitch: UISwitch!
     
+    @IBOutlet weak var socialLifeTextForSwitchLabel: UILabel!
+    @IBOutlet weak var workTextForSwitchLabel: UILabel!
+    @IBOutlet weak var sleepTextForSwitchLabel: UILabel!
+    
     @IBOutlet weak var catImageView: UIImageView!
     
     // Introduction
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
-    @IBOutlet weak var label4: UILabel!
     
     enum Choice {
         case work
@@ -65,7 +68,10 @@ class ViewController: UIViewController {
         label1.alpha = 0
         label2.alpha = 0
         label3.alpha = 0
-        label4.alpha = 0
+        
+        socialLifeTextForSwitchLabel.alpha = 0
+        workTextForSwitchLabel.alpha = 0
+        sleepTextForSwitchLabel.alpha = 0
 
         catImageView.alpha = 0
         
@@ -74,26 +80,31 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        animation.showImageViewWithDelay(toView: backgroundColorImageView, delay: 20, alpha: 1)
-        animation.showImageViewWithDelay(toView: socialLifeColorImageView, delay: 20, alpha: 0)
-        animation.showImageViewWithDelay(toView: sleepColorImageView, delay: 20, alpha: 0)
-        animation.showImageViewWithDelay(toView: workColorImageView, delay: 20, alpha: 0)
-        animation.showImageViewWithDelay(toView: socialLifeDesaturateImageView, delay: 20, alpha: 1)
-        animation.showImageViewWithDelay(toView: workDesaturateImageView, delay: 20, alpha: 1)
-        animation.showImageViewWithDelay(toView: sleepDesaturateImageView, delay: 20, alpha: 1)
+        animation.showImageViewWithDelay(toView: backgroundColorImageView, delay: 15, alpha: 1)
         
-        animation.showSwitchWithDelay(toView: socialLifeSwitch, delay: 20, alpha: 1)
-        animation.showSwitchWithDelay(toView: workSwitch, delay: 20, alpha: 1)
-        animation.showSwitchWithDelay(toView: sleepSwitch, delay: 20, alpha: 1)
+        animation.showImageViewWithDelay(toView: socialLifeColorImageView, delay: 17, alpha: 0)
+        animation.showImageViewWithDelay(toView: socialLifeDesaturateImageView, delay: 17, alpha: 1)
+        animation.showImageViewWithDelay(toView: sleepColorImageView, delay: 21, alpha: 0)
+        animation.showImageViewWithDelay(toView: sleepDesaturateImageView, delay: 21, alpha: 1)
+        animation.showImageViewWithDelay(toView: workColorImageView, delay: 19, alpha: 0)
+        animation.showImageViewWithDelay(toView: workDesaturateImageView, delay: 19, alpha: 1)
         
-        animation.showLabelWithDelay(toView: label1, delay: 2, timeIntervale: 5, alpha: 1, text:  "created by yauheni prakapenka")
-        animation.showLabelWithDelay(toView: label2, delay: 6, timeIntervale: 9, alpha: 1, text:  "Все успеть невозможно")
-        animation.showLabelWithDelay(toView: label3, delay: 10, timeIntervale: 14, alpha: 1, text:  "Сосредоточься только на том, что тебе действительно важно")
-        animation.showLabelWithDelay(toView: label4, delay: 15, timeIntervale: 19, alpha: 1, text:  "От остального просто откажись")
+        animation.showSwitchWithDelay(toView: socialLifeSwitch, delay: 22, alpha: 1)
+        animation.showSwitchWithDelay(toView: workSwitch, delay: 22, alpha: 1)
+        animation.showSwitchWithDelay(toView: sleepSwitch, delay: 22, alpha: 1)
         
+        animation.showLabelWithDelay(toView: label1, delay: 2, timeIntervale: 5, timerToDisable: true, text: "created by yauheni prakapenka")
+        animation.showLabelWithDelay(toView: label2, delay: 6, timeIntervale: 9, timerToDisable: true, text: "Все успеть невозможно")
+        animation.showLabelWithDelay(toView: label3, delay: 10, timeIntervale: 14, timerToDisable: true, text: "Сосредоточься только на том, что тебе действительно важно")
+        
+        animation.showLabelWithDelay(toView: socialLifeTextForSwitchLabel, delay: 22, timeIntervale: nil, timerToDisable: false, text: "Личная жизнь")
+        animation.showLabelWithDelay(toView: workTextForSwitchLabel, delay: 22, timeIntervale: nil, timerToDisable: false, text: "Работа")
+        animation.showLabelWithDelay(toView: sleepTextForSwitchLabel, delay: 22, timeIntervale: nil, timerToDisable: false, text: "Сон")
+
         catSprites = animation.createImageArray(total: 5, imagePrefix: "Cat")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+        animation.showImageViewWithDelay(toView: catImageView, delay: 22, alpha: 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 24) {
             self.animation.animateArray(imageView: self.catImageView, images: self.catSprites)
         }
     }
@@ -156,9 +167,6 @@ class ViewController: UIViewController {
         }
         previousChoice = currentChoice
     }
-    
-
-    
 
 }
 

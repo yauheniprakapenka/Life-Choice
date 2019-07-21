@@ -12,31 +12,33 @@ import UIKit
 class Animation {
     func showImageViewWithDelay(toView: UIImageView, delay: Double, alpha: CGFloat) {
         let imageView = toView
-        UIView.animate(withDuration: 1, delay: delay, options: [], animations: {
+        UIView.animate(withDuration: 2, delay: delay, options: [], animations: {
             imageView.alpha = alpha
         }, completion: nil)
     }
     
     func showSwitchWithDelay(toView: UISwitch, delay: Double, alpha: CGFloat) {
         let uiSwitch = toView
-        UIView.animate(withDuration: 1, delay: delay, options: [], animations: {
+        UIView.animate(withDuration: 2, delay: delay, options: [], animations: {
             uiSwitch.alpha = alpha
         }, completion: nil)
     }
     
-    func showLabelWithDelay(toView: UILabel, delay: Double, timeIntervale: Double, alpha: CGFloat, text: String) {
+    func showLabelWithDelay(toView: UILabel, delay: Double, timeIntervale: Double? = nil, timerToDisable: Bool, text: String) {
         let uiLabel = toView
         uiLabel.text = text
         
-        UIView.animate(withDuration: 1, delay: delay, options: [], animations: {
-            uiLabel.alpha = alpha
+        UIView.animate(withDuration: 1.5, delay: delay, options: [], animations: {
+            uiLabel.alpha = 1
         }, completion: nil)
         
-        Timer.scheduledTimer(withTimeInterval: timeIntervale, repeats: false, block: { timer in
-            UIImageView.animate(withDuration: 1) { [weak self] in
-            toView.alpha = 0
-            }
-        })
+        if timerToDisable {
+            Timer.scheduledTimer(withTimeInterval: timeIntervale ?? 0, repeats: false, block: { timer in
+                UIImageView.animate(withDuration: 1) { [weak self] in
+                    toView.alpha = 0
+                }
+            })
+        }
     }
     
     func animateArray(imageView: UIImageView, images: [UIImage]) {
