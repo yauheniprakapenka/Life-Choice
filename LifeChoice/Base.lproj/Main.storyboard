@@ -58,13 +58,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label4" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="fze-I6-0x2">
-                                <rect key="frame" x="290" y="197" width="316" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-c0-XOB">
                                 <rect key="frame" x="43" y="109" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -78,54 +71,70 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L4c-bN-PY7">
-                                <rect key="frame" x="381" y="112" width="49" height="31"/>
+                                <rect key="frame" x="367" y="112" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="toggleWorkSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="4S1-OW-2Cy"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Работа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umy-FS-S3m">
-                                <rect key="frame" x="450" y="115" width="65" height="24"/>
+                                <rect key="frame" x="436" y="115" width="147" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8TS-hi-XdG">
-                                <rect key="frame" x="745" y="112" width="49" height="31"/>
+                                <rect key="frame" x="744" y="112" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="toggleSleepSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="oRV-fm-xpi"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Сон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHQ-4l-3ct">
-                                <rect key="frame" x="809" y="114" width="37" height="24"/>
+                                <rect key="frame" x="808" y="114" width="116" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WorkColor" translatesAutoresizingMaskIntoConstraints="NO" id="Of8-GJ-MaP">
                                 <rect key="frame" x="317" y="185" width="260" height="213"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cat-0.png" translatesAutoresizingMaskIntoConstraints="NO" id="H9m-Ni-Wyu">
-                                <rect key="frame" x="652" y="35" width="100" height="89"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FamilyColor" translatesAutoresizingMaskIntoConstraints="NO" id="tz4-8o-IhX">
                                 <rect key="frame" x="64" y="183" width="164" height="210"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cat-0.png" translatesAutoresizingMaskIntoConstraints="NO" id="H9m-Ni-Wyu">
+                                <rect key="frame" x="502" y="233" width="100" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Train" translatesAutoresizingMaskIntoConstraints="NO" id="AY2-49-4Bj">
+                                <rect key="frame" x="10" y="352" width="161" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="Oe6-ef-zKT"/>
+                                    <constraint firstAttribute="height" constant="46" id="TFQ-hU-fmf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iVs-Yf-fR8">
+                                <rect key="frame" x="744" y="151" width="101" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Mcz-0f-vWy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1tX-id-YfK"/>
+                            <constraint firstAttribute="bottom" secondItem="AY2-49-4Bj" secondAttribute="bottom" constant="16" id="GvC-5a-sJb"/>
+                            <constraint firstItem="AY2-49-4Bj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="TsJ-DZ-aho"/>
                             <constraint firstItem="Mcz-0f-vWy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="haZ-Lz-HgA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -136,16 +145,21 @@
                         <outlet property="label1" destination="nOH-Ps-b7k" id="4Kw-R8-Aop"/>
                         <outlet property="label2" destination="RlK-sv-UFw" id="gF1-LI-9wN"/>
                         <outlet property="label3" destination="Mcz-0f-vWy" id="s9e-eM-uw4"/>
-                        <outlet property="label4" destination="fze-I6-0x2" id="jQ8-Lv-tDI"/>
                         <outlet property="sleepColorImageView" destination="cIn-nE-ljp" id="7pJ-pl-sj8"/>
                         <outlet property="sleepDesaturateImageView" destination="Kpk-q9-TlU" id="0oM-ee-BOL"/>
                         <outlet property="sleepSwitch" destination="8TS-hi-XdG" id="x1v-pX-XJF"/>
+                        <outlet property="sleepTextForSwitchLabel" destination="PHQ-4l-3ct" id="tcP-vZ-IYc"/>
                         <outlet property="socialLifeColorImageView" destination="tz4-8o-IhX" id="hYu-dg-jBJ"/>
                         <outlet property="socialLifeDesaturateImageView" destination="OFQ-30-eUz" id="PaU-8r-19h"/>
                         <outlet property="socialLifeSwitch" destination="XHu-c0-XOB" id="a2k-Vl-a9b"/>
+                        <outlet property="socialLifeTextForSwitchLabel" destination="a44-Q4-dbo" id="Qtj-D0-DjI"/>
+                        <outlet property="trainHorizontalConstraint" destination="TsJ-DZ-aho" id="vTB-jn-HGZ"/>
+                        <outlet property="trainImageView" destination="AY2-49-4Bj" id="Onb-pb-VrA"/>
                         <outlet property="workColorImageView" destination="Of8-GJ-MaP" id="I6v-3k-g5i"/>
                         <outlet property="workDesaturateImageView" destination="e1W-o2-YIe" id="vxD-pB-jr5"/>
                         <outlet property="workSwitch" destination="L4c-bN-PY7" id="4KI-3z-p7g"/>
+                        <outlet property="workTextForSwitchLabel" destination="umy-FS-S3m" id="1Io-Ra-Z5R"/>
+                        <outlet property="zzzImageView" destination="iVs-Yf-fR8" id="h4Y-Kz-FJ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -160,6 +174,7 @@
         <image name="FamilyColor" width="312" height="376"/>
         <image name="SleepBlack" width="420" height="298"/>
         <image name="SleepColor" width="420" height="298"/>
+        <image name="Train" width="512" height="118"/>
         <image name="WorkBlack" width="538" height="429"/>
         <image name="WorkColor" width="538" height="429"/>
     </resources>
