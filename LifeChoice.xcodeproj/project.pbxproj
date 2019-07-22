@@ -21,6 +21,13 @@
 		3E530CF822E301EE00E3906B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E530CF622E301EE00E3906B /* Main.storyboard */; };
 		3E530CFA22E301EF00E3906B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E530CF922E301EF00E3906B /* Assets.xcassets */; };
 		3E530CFD22E301EF00E3906B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E530CFB22E301EF00E3906B /* LaunchScreen.storyboard */; };
+		3EB3CE9122E6318100B3AC58 /* cloud-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB3CE8A22E6318100B3AC58 /* cloud-5.png */; };
+		3EB3CE9222E6318100B3AC58 /* cloud-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB3CE8B22E6318100B3AC58 /* cloud-3.png */; };
+		3EB3CE9322E6318100B3AC58 /* cloud-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB3CE8C22E6318100B3AC58 /* cloud-1.png */; };
+		3EB3CE9422E6318100B3AC58 /* cloud-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB3CE8D22E6318100B3AC58 /* cloud-4.png */; };
+		3EB3CE9522E6318100B3AC58 /* cloud-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB3CE8E22E6318100B3AC58 /* cloud-6.png */; };
+		3EB3CE9622E6318100B3AC58 /* cloud-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB3CE8F22E6318100B3AC58 /* cloud-2.png */; };
+		3EB3CE9722E6318100B3AC58 /* cloud-0.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB3CE9022E6318100B3AC58 /* cloud-0.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +47,13 @@
 		3E530CF922E301EF00E3906B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3E530CFC22E301EF00E3906B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3E530CFE22E301EF00E3906B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EB3CE8A22E6318100B3AC58 /* cloud-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-5.png"; sourceTree = "<group>"; };
+		3EB3CE8B22E6318100B3AC58 /* cloud-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-3.png"; sourceTree = "<group>"; };
+		3EB3CE8C22E6318100B3AC58 /* cloud-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-1.png"; sourceTree = "<group>"; };
+		3EB3CE8D22E6318100B3AC58 /* cloud-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-4.png"; sourceTree = "<group>"; };
+		3EB3CE8E22E6318100B3AC58 /* cloud-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-6.png"; sourceTree = "<group>"; };
+		3EB3CE8F22E6318100B3AC58 /* cloud-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-2.png"; sourceTree = "<group>"; };
+		3EB3CE9022E6318100B3AC58 /* cloud-0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-0.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 		3E435AAF22E43F180032693C /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
+				3EB3CE7B22E618BD00B3AC58 /* cloud */,
 				3E435AE722E4B6730032693C /* z-z-z */,
 				3E435AB022E43F3A0032693C /* Cat */,
 			);
@@ -113,6 +128,20 @@
 				3E530CFE22E301EF00E3906B /* Info.plist */,
 			);
 			path = LifeChoice;
+			sourceTree = "<group>";
+		};
+		3EB3CE7B22E618BD00B3AC58 /* cloud */ = {
+			isa = PBXGroup;
+			children = (
+				3EB3CE9022E6318100B3AC58 /* cloud-0.png */,
+				3EB3CE8C22E6318100B3AC58 /* cloud-1.png */,
+				3EB3CE8F22E6318100B3AC58 /* cloud-2.png */,
+				3EB3CE8B22E6318100B3AC58 /* cloud-3.png */,
+				3EB3CE8D22E6318100B3AC58 /* cloud-4.png */,
+				3EB3CE8A22E6318100B3AC58 /* cloud-5.png */,
+				3EB3CE8E22E6318100B3AC58 /* cloud-6.png */,
+			);
+			path = cloud;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,12 +204,19 @@
 			files = (
 				3E530CFD22E301EF00E3906B /* LaunchScreen.storyboard in Resources */,
 				3E435ADE22E452AF0032693C /* Cat-0.png in Resources */,
+				3EB3CE9122E6318100B3AC58 /* cloud-5.png in Resources */,
 				3E435AE422E452FA0032693C /* Cat-3.png in Resources */,
+				3EB3CE9622E6318100B3AC58 /* cloud-2.png in Resources */,
+				3EB3CE9422E6318100B3AC58 /* cloud-4.png in Resources */,
 				3E435AE622E452FA0032693C /* Cat-2.png in Resources */,
+				3EB3CE9222E6318100B3AC58 /* cloud-3.png in Resources */,
 				3E435AEB22E4B7230032693C /* z-z-z-1.png in Resources */,
 				3E530CFA22E301EF00E3906B /* Assets.xcassets in Resources */,
 				3E530CF822E301EE00E3906B /* Main.storyboard in Resources */,
 				3E435AE322E452FA0032693C /* Cat-4.png in Resources */,
+				3EB3CE9522E6318100B3AC58 /* cloud-6.png in Resources */,
+				3EB3CE9722E6318100B3AC58 /* cloud-0.png in Resources */,
+				3EB3CE9322E6318100B3AC58 /* cloud-1.png in Resources */,
 				3E435AEA22E4B7230032693C /* z-z-z-0.png in Resources */,
 				3E435AE522E452FA0032693C /* Cat-1.png in Resources */,
 			);

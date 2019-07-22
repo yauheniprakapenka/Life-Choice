@@ -43,7 +43,7 @@ class Animation {
     
     func animateArray(imageView: UIImageView, images: [UIImage], duration: Double) {
         imageView.animationImages = images
-        imageView.alpha = 1
+//        imageView.alpha = 1
         imageView.animationDuration = duration
         imageView.animationRepeatCount = 99999
         imageView.startAnimating()
