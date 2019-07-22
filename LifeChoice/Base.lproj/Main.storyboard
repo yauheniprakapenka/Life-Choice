@@ -75,14 +75,14 @@
                                 <size key="shadowOffset" width="2" height="2"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="L4c-bN-PY7">
-                                <rect key="frame" x="367" y="112" width="49" height="31"/>
+                                <rect key="frame" x="380" y="112" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="toggleWorkSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="4S1-OW-2Cy"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Работа" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umy-FS-S3m">
-                                <rect key="frame" x="436" y="115" width="147" height="26"/>
+                                <rect key="frame" x="449" y="115" width="147" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,7 +119,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Train" translatesAutoresizingMaskIntoConstraints="NO" id="AY2-49-4Bj">
-                                <rect key="frame" x="10" y="352" width="161" height="46"/>
+                                <rect key="frame" x="100" y="352" width="161" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="161" id="Oe6-ef-zKT"/>
                                     <constraint firstAttribute="height" constant="46" id="TFQ-hU-fmf"/>
@@ -129,12 +129,16 @@
                                 <rect key="frame" x="744" y="151" width="101" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cloud-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="f0Q-hS-Ngu">
+                                <rect key="frame" x="230" y="281" width="56" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Mcz-0f-vWy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1tX-id-YfK"/>
                             <constraint firstAttribute="bottom" secondItem="AY2-49-4Bj" secondAttribute="bottom" constant="16" id="GvC-5a-sJb"/>
-                            <constraint firstItem="AY2-49-4Bj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="TsJ-DZ-aho"/>
+                            <constraint firstItem="AY2-49-4Bj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="TsJ-DZ-aho"/>
                             <constraint firstItem="Mcz-0f-vWy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="haZ-Lz-HgA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -142,6 +146,7 @@
                     <connections>
                         <outlet property="backgroundColorImageView" destination="ShC-2G-NaH" id="5Jc-D6-IB2"/>
                         <outlet property="catImageView" destination="H9m-Ni-Wyu" id="a4j-US-Cr5"/>
+                        <outlet property="cloudImageView" destination="f0Q-hS-Ngu" id="kqU-yX-pno"/>
                         <outlet property="label1" destination="nOH-Ps-b7k" id="4Kw-R8-Aop"/>
                         <outlet property="label2" destination="RlK-sv-UFw" id="gF1-LI-9wN"/>
                         <outlet property="label3" destination="Mcz-0f-vWy" id="s9e-eM-uw4"/>
@@ -177,5 +182,6 @@
         <image name="Train" width="512" height="118"/>
         <image name="WorkBlack" width="538" height="429"/>
         <image name="WorkColor" width="538" height="429"/>
+        <image name="cloud-2.png" width="79" height="108"/>
     </resources>
 </document>

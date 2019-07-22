@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     var catSprites: [UIImage] = []
     var zzzSprites: [UIImage] = []
+    var cloudSprites: [UIImage] = []
     
     @IBOutlet weak var backgroundColorImageView: UIImageView!
     
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var catImageView: UIImageView!
     @IBOutlet weak var zzzImageView: UIImageView!
+    @IBOutlet weak var cloudImageView: UIImageView!
     
     @IBOutlet weak var trainImageView: UIImageView!
     @IBOutlet weak var trainHorizontalConstraint: NSLayoutConstraint!
@@ -84,6 +86,10 @@ class ViewController: UIViewController {
         motionEffect.applyMotionEffect(toView: backgroundColorImageView, magnitude: 50)
         
         trainHorizontalConstraint.constant = -170
+        
+        zzzImageView.alpha = 0
+        catImageView.alpha = 0
+        cloudImageView.alpha = 0
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -111,10 +117,10 @@ class ViewController: UIViewController {
 
         catSprites = animation.createImageArray(total: 5, imagePrefix: "Cat")
         zzzSprites = animation.createImageArray(total: 2, imagePrefix: "z-z-z")
+        cloudSprites = animation.createImageArray(total: 7, imagePrefix: "cloud")
         animation.animateArray(imageView: zzzImageView, images: zzzSprites, duration: 1.8)
-        animation.animateArray(imageView: catImageView, images: catSprites, duration: 10)
-        zzzImageView.alpha = 0
-        catImageView.alpha = 0
+        animation.animateArray(imageView: catImageView, images: catSprites, duration: 8)
+        animation.animateArray(imageView: cloudImageView, images: cloudSprites, duration: 1.3)
     }
     
     @IBAction func toggleWorkSwitch(_ sender: UISwitch) {
@@ -126,6 +132,7 @@ class ViewController: UIViewController {
         if workSwitch.isOn && socialLifeSwitch.isOn && sleepSwitch.isOn {
             socialLifeSwitch.isOn = false
             socialLifeColorImageView.alpha = 0
+            cloudImageView.alpha = 0
             trainImageView.alpha = 0
             trainHorizontalConstraint.constant = -170
         }
@@ -159,13 +166,15 @@ class ViewController: UIViewController {
         
         if socialLifeSwitch.isOn {
             socialLifeColorImageView.alpha = 1
+            animateTrainOn()
             
-            animateTrain()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+                self.cloudImageView.alpha = 1
+            }
         } else {
             socialLifeColorImageView.alpha = 0
-            
-            trainHorizontalConstraint.constant = -170
-            trainImageView.alpha = 0
+            animateTrainOff()
+            cloudImageView.alpha = 0
         }
     }
     
@@ -181,8 +190,8 @@ class ViewController: UIViewController {
             } else {
                 socialLifeSwitch.isOn = false
                 socialLifeColorImageView.alpha = 0
-                trainImageView.alpha = 0
-                trainHorizontalConstraint.constant = -170
+                animateTrainOff()
+                cloudImageView.alpha = 0
             }
         }
         
@@ -196,13 +205,19 @@ class ViewController: UIViewController {
         previousChoice = currentChoice
     }
     
-    func animateTrain() {
+    func animateTrainOn() {
         trainImageView.alpha = 1
-        UIView.animate(withDuration: 50, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 10, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.trainHorizontalConstraint.constant = 100
             self.view.layoutIfNeeded()
         })
     }
-
+    
+    func animateTrainOff() {
+        trainImageView.alpha = 0
+        trainHorizontalConstraint.constant = -170
+        cloudImageView.alpha = 0
+    }
+    
 }
 
