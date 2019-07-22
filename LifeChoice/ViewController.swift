@@ -83,7 +83,7 @@ class ViewController: UIViewController {
         catImageView.alpha = 0
         zzzImageView.alpha = 0
         
-        motionEffect.applyMotionEffect(toView: backgroundColorImageView, magnitude: 50)
+        motionEffect.applyMotionEffect(toView: backgroundColorImageView, magnitude: 60)
         
         trainHorizontalConstraint.constant = -170
         
@@ -118,9 +118,10 @@ class ViewController: UIViewController {
         catSprites = animation.createImageArray(total: 5, imagePrefix: "Cat")
         zzzSprites = animation.createImageArray(total: 2, imagePrefix: "z-z-z")
         cloudSprites = animation.createImageArray(total: 7, imagePrefix: "cloud")
+        
         animation.animateArray(imageView: zzzImageView, images: zzzSprites, duration: 1.8)
         animation.animateArray(imageView: catImageView, images: catSprites, duration: 8)
-        animation.animateArray(imageView: cloudImageView, images: cloudSprites, duration: 1.3)
+        animation.animateArray(imageView: cloudImageView, images: cloudSprites, duration: 1.7)
     }
     
     @IBAction func toggleWorkSwitch(_ sender: UISwitch) {
@@ -207,7 +208,7 @@ class ViewController: UIViewController {
     
     func animateTrainOn() {
         trainImageView.alpha = 1
-        UIView.animate(withDuration: 10, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 20, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
             self.trainHorizontalConstraint.constant = 100
             self.view.layoutIfNeeded()
         })
