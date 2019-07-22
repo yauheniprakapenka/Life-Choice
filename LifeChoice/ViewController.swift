@@ -127,7 +127,7 @@ class ViewController: UIViewController {
             socialLifeSwitch.isOn = false
             socialLifeColorImageView.alpha = 0
             trainImageView.alpha = 0
-            
+            trainHorizontalConstraint.constant = -170
         }
         workColorImageView.alpha = 1
         previousChoice = currentChoice
@@ -160,18 +160,12 @@ class ViewController: UIViewController {
         if socialLifeSwitch.isOn {
             socialLifeColorImageView.alpha = 1
             
-            trainImageView.alpha = 1
-            UIView.animate(withDuration: 50, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-                self.trainHorizontalConstraint.constant = 100
-                self.view.layoutIfNeeded()
-            })
+            animateTrain()
         } else {
             socialLifeColorImageView.alpha = 0
             
             trainHorizontalConstraint.constant = -170
-            UIImageView.animate(withDuration: 1) { [weak self] in
-                self?.trainImageView.alpha = 0
-            }
+            trainImageView.alpha = 0
         }
     }
     
@@ -188,6 +182,7 @@ class ViewController: UIViewController {
                 socialLifeSwitch.isOn = false
                 socialLifeColorImageView.alpha = 0
                 trainImageView.alpha = 0
+                trainHorizontalConstraint.constant = -170
             }
         }
         
@@ -199,6 +194,14 @@ class ViewController: UIViewController {
             zzzImageView.alpha = 0
         }
         previousChoice = currentChoice
+    }
+    
+    func animateTrain() {
+        trainImageView.alpha = 1
+        UIView.animate(withDuration: 50, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            self.trainHorizontalConstraint.constant = 100
+            self.view.layoutIfNeeded()
+        })
     }
 
 }
