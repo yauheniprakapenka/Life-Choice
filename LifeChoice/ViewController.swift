@@ -44,6 +44,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var trainImageView: UIImageView!
     @IBOutlet weak var trainHorizontalConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var trafaretView: UIImageView!
+    
     // Introduction
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
@@ -90,6 +93,9 @@ class ViewController: UIViewController {
         zzzImageView.alpha = 0
         catImageView.alpha = 0
         cloudImageView.alpha = 0
+        trafaretView.alpha = 0
+        
+        animateGradient(toView: gradientView)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -103,11 +109,14 @@ class ViewController: UIViewController {
         animation.showImageViewWithDelay(toView: workColorImageView, delay: 19, alpha: 0)
         animation.showImageViewWithDelay(toView: workDesaturateImageView, delay: 19, alpha: 1)
         
+        animation.showImageViewWithDelay(toView: trafaretView, delay: 9, alpha: 1)
+        animation.showImageViewWithDelay(toView: trafaretView, delay: 15, alpha: 0)
+        
         animation.showSwitchWithDelay(toView: socialLifeSwitch, delay: 22, alpha: 1)
         animation.showSwitchWithDelay(toView: workSwitch, delay: 22, alpha: 1)
         animation.showSwitchWithDelay(toView: sleepSwitch, delay: 22, alpha: 1)
         
-        animation.showLabelWithDelay(toView: label1, delay: 2, timeIntervale: 5, timerToDisable: true, text: "created by yauheni prakapenka")
+        animation.showLabelWithDelay(toView: label1, delay: 2, timeIntervale: 6, timerToDisable: true, text: "created by yauheni prakapenka")
         animation.showLabelWithDelay(toView: label2, delay: 6, timeIntervale: 9, timerToDisable: true, text: "Все успеть невозможно")
         animation.showLabelWithDelay(toView: label3, delay: 10, timeIntervale: 14, timerToDisable: true, text: "Сосредоточься только на том, что тебе действительно важно")
         
@@ -218,6 +227,37 @@ class ViewController: UIViewController {
         trainImageView.alpha = 0
         trainHorizontalConstraint.constant = -170
         cloudImageView.alpha = 0
+    }
+    
+    func animateGradient(toView: UIView) {
+        let viewObject = toView
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 11.7) {
+            viewObject.alpha = 1
+            let gradient = CAGradientLayer(layer: viewObject.layer)
+            gradient.colors = [#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1).cgColor, #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor]
+            gradient.locations = [0, 1]
+            gradient.startPoint = CGPoint(x: 0, y: 1)
+            gradient.endPoint = CGPoint(x: 1, y: 1)
+            gradient.frame = viewObject.bounds
+            
+            viewObject.layer.insertSublayer(gradient, at: 0)
+            self.view.addSubview(viewObject)
+            
+            let animation = CABasicAnimation(keyPath: "locations")
+            animation.fromValue = [0, 0.0]
+            animation.toValue = [0, 1.0]
+            animation.autoreverses = false
+            animation.repeatCount = 1
+            animation.duration = 1.3
+            gradient.add(animation, forKey: nil)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 13.8) {
+            UIView.animate(withDuration: 1.1, animations: {
+                self.gradientView.alpha = 0
+            }, completion: nil)
+        }
     }
     
 }

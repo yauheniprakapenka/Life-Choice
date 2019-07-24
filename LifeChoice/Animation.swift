@@ -34,7 +34,7 @@ class Animation {
         
         if timerToDisable {
             Timer.scheduledTimer(withTimeInterval: timeIntervale ?? 0, repeats: false, block: { timer in
-                UIImageView.animate(withDuration: 1) { [weak self] in
+                UIImageView.animate(withDuration: 1) { 
                     toView.alpha = 0
                 }
             })
@@ -43,7 +43,6 @@ class Animation {
     
     func animateArray(imageView: UIImageView, images: [UIImage], duration: Double) {
         imageView.animationImages = images
-//        imageView.alpha = 1
         imageView.animationDuration = duration
         imageView.animationRepeatCount = 99999
         imageView.startAnimating()
@@ -58,4 +57,6 @@ class Animation {
         }
         return imageArray
     }
+    
+    
 }
