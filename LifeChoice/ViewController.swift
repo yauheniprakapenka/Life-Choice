@@ -51,6 +51,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
+    @IBOutlet weak var label4: UILabel!
+    @IBOutlet weak var label5: UILabel!
+    
+    @IBOutlet weak var resultLabel: UILabel!
     
     enum Choice {
         case work
@@ -78,6 +82,8 @@ class ViewController: UIViewController {
         label1.alpha = 0
         label2.alpha = 0
         label3.alpha = 0
+        label4.alpha = 0
+        label5.alpha = 0
         
         socialLifeTextForSwitchLabel.alpha = 0
         workTextForSwitchLabel.alpha = 0
@@ -100,29 +106,32 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        animation.showImageViewWithDelay(toView: backgroundColorImageView, delay: 15, alpha: 1)
+        animation.showImageViewWithDelay(toView: backgroundColorImageView, delay: 17, alpha: 1)
         
-        animation.showImageViewWithDelay(toView: socialLifeColorImageView, delay: 17, alpha: 0)
-        animation.showImageViewWithDelay(toView: socialLifeDesaturateImageView, delay: 17, alpha: 1)
-        animation.showImageViewWithDelay(toView: sleepColorImageView, delay: 21, alpha: 0)
-        animation.showImageViewWithDelay(toView: sleepDesaturateImageView, delay: 21, alpha: 1)
-        animation.showImageViewWithDelay(toView: workColorImageView, delay: 19, alpha: 0)
-        animation.showImageViewWithDelay(toView: workDesaturateImageView, delay: 19, alpha: 1)
+        animation.showImageViewWithDelay(toView: socialLifeColorImageView, delay: 19, alpha: 0)
+        animation.showImageViewWithDelay(toView: socialLifeDesaturateImageView, delay: 19, alpha: 1)
+        animation.showImageViewWithDelay(toView: sleepColorImageView, delay: 23, alpha: 0)
+        animation.showImageViewWithDelay(toView: sleepDesaturateImageView, delay: 23, alpha: 1)
+        animation.showImageViewWithDelay(toView: workColorImageView, delay: 21, alpha: 0)
+        animation.showImageViewWithDelay(toView: workDesaturateImageView, delay: 21, alpha: 1)
         
         animation.showImageViewWithDelay(toView: trafaretView, delay: 9, alpha: 1)
-        animation.showImageViewWithDelay(toView: trafaretView, delay: 15, alpha: 0)
+        animation.showImageViewWithDelay(toView: trafaretView, delay: 16, alpha: 0)
         
-        animation.showSwitchWithDelay(toView: socialLifeSwitch, delay: 22, alpha: 1)
-        animation.showSwitchWithDelay(toView: workSwitch, delay: 22, alpha: 1)
-        animation.showSwitchWithDelay(toView: sleepSwitch, delay: 22, alpha: 1)
+        animation.showSwitchWithDelay(toView: socialLifeSwitch, delay: 24, alpha: 1)
+        animation.showSwitchWithDelay(toView: workSwitch, delay: 24, alpha: 1)
+        animation.showSwitchWithDelay(toView: sleepSwitch, delay: 24, alpha: 1)
         
-        animation.showLabelWithDelay(toView: label1, delay: 2, timeIntervale: 6, timerToDisable: true, text: "created by yauheni prakapenka")
-        animation.showLabelWithDelay(toView: label2, delay: 6, timeIntervale: 9, timerToDisable: true, text: "Все успеть невозможно")
-        animation.showLabelWithDelay(toView: label3, delay: 10, timeIntervale: 14, timerToDisable: true, text: "Сосредоточься только на том, что тебе действительно важно")
+        animation.showLabelWithDelay(toView: label1, delay: 1, timeIntervale: 7, timerToDisable: true, text: "created by yauheni prakapenka")
+        animation.showLabelWithDelay(toView: label4, delay: 3, timeIntervale: 7, timerToDisable: true, text: "linkedin.com/in/yauheniprakapenka")
+        animation.showLabelWithDelay(toView: label5, delay: 3, timeIntervale: 7, timerToDisable: true, text: "Gomel, 2019")
+        animation.showLabelWithDelay(toView: label2, delay: 7, timeIntervale: 11, timerToDisable: true, text: "Все успеть невозможно")
+        animation.showLabelWithDelay(toView: label3, delay: 11, timeIntervale: 16.7, timerToDisable: true, text: "Сосредоточься только на том, что тебе действительно важно")
         
-        animation.showLabelWithDelay(toView: socialLifeTextForSwitchLabel, delay: 22, timeIntervale: nil, timerToDisable: false, text: "Личная жизнь")
-        animation.showLabelWithDelay(toView: workTextForSwitchLabel, delay: 22, timeIntervale: nil, timerToDisable: false, text: "Работа")
-        animation.showLabelWithDelay(toView: sleepTextForSwitchLabel, delay: 22, timeIntervale: nil, timerToDisable: false, text: "Сон")
+        animation.showLabelWithDelay(toView: socialLifeTextForSwitchLabel, delay: 24, timeIntervale: nil, timerToDisable: false, text: "Личная жизнь")
+        animation.showLabelWithDelay(toView: workTextForSwitchLabel, delay: 24, timeIntervale: nil, timerToDisable: false, text: "Работа")
+        animation.showLabelWithDelay(toView: sleepTextForSwitchLabel, delay: 24, timeIntervale: nil, timerToDisable: false, text: "Сон")
+        animation.showLabelWithDelay(toView: resultLabel, delay: 26, timeIntervale: nil, timerToDisable: false, text: "Это большое счастье находить время\nна личную жизнь, работу и сон")
 
         catSprites = animation.createImageArray(total: 5, imagePrefix: "Cat")
         zzzSprites = animation.createImageArray(total: 2, imagePrefix: "z-z-z")
@@ -145,6 +154,7 @@ class ViewController: UIViewController {
             cloudImageView.alpha = 0
             trainImageView.alpha = 0
             trainHorizontalConstraint.constant = -170
+            resultLabel.text = "Но выбирая работу и сон\nне остается времени на личную жизнь"
         }
         workColorImageView.alpha = 1
         previousChoice = currentChoice
@@ -165,10 +175,12 @@ class ViewController: UIViewController {
                 sleepSwitch.isOn = false
                 sleepColorImageView.alpha = 0
                 zzzImageView.alpha = 0
+                resultLabel.text = "Но выбирая личную жизнь и работу\nне остается времени на сон"
             } else {
                 workSwitch.isOn = false
                 workColorImageView.alpha = 0
                 catImageView.alpha = 0
+                resultLabel.text = "Но выбирая личную жизнь и сон\nне остается времени на работу"
             }
             socialLifeColorImageView.alpha = 1
         }
@@ -178,7 +190,7 @@ class ViewController: UIViewController {
             socialLifeColorImageView.alpha = 1
             animateTrainOn()
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.6) {
                 self.cloudImageView.alpha = 1
             }
         } else {
@@ -197,11 +209,13 @@ class ViewController: UIViewController {
                 socialLifeColorImageView.alpha = 1
                 workColorImageView.alpha = 0
                 catImageView.alpha = 0
+                resultLabel.text = "Но выбирая личную жизнь и сон\nне остается времени на работу"
             } else {
                 socialLifeSwitch.isOn = false
                 socialLifeColorImageView.alpha = 0
                 animateTrainOff()
                 cloudImageView.alpha = 0
+                resultLabel.text = "Но выбирая работу и сон\nне остается времени на личную жизнь"
             }
         }
         
@@ -232,7 +246,7 @@ class ViewController: UIViewController {
     func animateGradient(toView: UIView) {
         let viewObject = toView
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 11.7) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 12.9) {
             viewObject.alpha = 1
             let gradient = CAGradientLayer(layer: viewObject.layer)
             gradient.colors = [#colorLiteral(red: 0.8078431487, green: 0.02745098062, blue: 0.3333333433, alpha: 1).cgColor, #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor]
@@ -253,8 +267,8 @@ class ViewController: UIViewController {
             gradient.add(animation, forKey: nil)
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 13.8) {
-            UIView.animate(withDuration: 1.1, animations: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 14.7) {
+            UIView.animate(withDuration: 2, animations: {
                 self.gradientView.alpha = 0
             }, completion: nil)
         }
