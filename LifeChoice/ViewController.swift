@@ -166,6 +166,9 @@ class ViewController: UIViewController {
             workColorImageView.alpha = 0
             catImageView.alpha = 0
         }
+        
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
     
     @IBAction func toggleSocialLifeSwitch(_ sender: UISwitch) {
@@ -198,6 +201,9 @@ class ViewController: UIViewController {
             animateTrainOff()
             cloudImageView.alpha = 0
         }
+        
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
     
     @IBAction func toggleSleepSwitch(_ sender: UISwitch) {
@@ -227,6 +233,9 @@ class ViewController: UIViewController {
             zzzImageView.alpha = 0
         }
         previousChoice = currentChoice
+        
+        let generator = UIImpactFeedbackGenerator(style: .medium)
+        generator.impactOccurred()
     }
     
     func animateTrainOn() {
